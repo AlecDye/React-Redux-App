@@ -14,6 +14,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
+        <h1>Today's XKCD</h1>
         <ComicForm />
       </div>
     </Provider>
