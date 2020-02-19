@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import { comicReducer as reducer } from './reducers/comicReducer'
 
 import ComicForm from './components/ComicForm';
+import ComicList from './components/ComicList';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
@@ -17,6 +18,7 @@ function App() {
       <div className="App">
         <h1>Today's XKCD</h1>
         <ComicForm />
+        <ComicList />
       </div>
     </Provider>
   );
