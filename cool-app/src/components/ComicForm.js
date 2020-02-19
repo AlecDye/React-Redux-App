@@ -5,15 +5,22 @@ import { getData } from '../actions';
 
 const ComicForm = props => {
     console.log("ComicForm props", props)
+    // receiving "isFetchingData: false"
 
     const handleGetData = e => {
         e.preventDefault();
         props.getData();
     }
 
+    //* if fetch: true (loading message), if fetch: false (button)
     return (
         <>
-            <button onClick={handleGetData}>Get today's comic</button>
+            {''}
+            {props.isFetchingData ? (
+                <div>Loading give me a sec...</div>
+            ) : (
+                    <button onClick={handleGetData}>Get today's comic</button>
+                )}
         </>
     )
 }
