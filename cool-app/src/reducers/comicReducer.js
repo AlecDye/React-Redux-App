@@ -1,10 +1,9 @@
-import { FETCH_DATA } from "../actions";
+import { FETCH_DATA, UPDATE_COMIC } from "../actions";
 
-//* comic array contains ALL the API data (a single object)
+//* comic array contains ALL the API data
 const initialState = {
     comic: [],
-    isFetchingData: false,
-    error: ''
+    isFetchingData: false
     // comic: [{
     //     title: '',
     //     img: '',
@@ -20,6 +19,12 @@ export const comicReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetchingData: true
+            }
+        case UPDATE_COMIC:
+            return {
+                ...state,
+                comic: action.payload,
+                isFetchingData: false
             }
         default:
             return state;

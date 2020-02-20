@@ -5,15 +5,21 @@ const ComicList = props => {
     console.log("ComicList props", props)
 
     return (
-        <>
-            {/* props.comic.map(comic => <div>{comic.title}</div>) */}
+        <>{props.error ? (
+            <div className="error">{props.error}</div>
+        ) : (
+                props.comic.map(comic => <div>
+                    <h2>{comic.title}</h2>
+                    <img src={comic.img} alt={comic.alt} />
+                </div>)
+            )}
         </>
     )
 }
 
 const mapStateToProps = state => {
     return {
-        comic: state.comic
+        comic: [state.comic]
     }
 }
 
