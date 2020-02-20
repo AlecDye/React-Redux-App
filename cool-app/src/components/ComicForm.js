@@ -17,9 +17,10 @@ const ComicForm = props => {
         <>
             {''}
             {props.isFetchingData ? (
-                <div>Loading give me a sec...</div>
+                <div className='loading-cont'>Loading give me a sec...</div>
             ) : (
-                    <button onClick={handleGetData}>Get today's comic</button>
+                    <button
+                        onClick={handleGetData}>GET TODAY'S COMIC</button>
                 )}
         </>
     )

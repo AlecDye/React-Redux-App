@@ -16,8 +16,11 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <h1>Today's XKCD</h1>
-        <ComicForm />
+        <header>
+          <a href="https://xkcd.com/"><h1>xkcd Extract</h1></a>
+          <p>⬆ visit xkcd.com</p>
+          <ComicForm />
+        </header>
         <ComicList />
       </div>
     </Provider>

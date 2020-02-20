@@ -5,16 +5,16 @@ const ComicList = props => {
     console.log("ComicList props", props)
 
     return (
-        <>{props.error ? (
-            <div className="error">{props.error}</div>
-        ) : (
-                props.comic.map(comic =>
-                    <div className='comic-container'>
-                        <h2>{comic.title}</h2>
-                        <img src={comic.img} alt={comic.alt} />
-                        <a href="https://xkcd.com/">Visit xkcd.com</a>
-                    </div>)
-            )}
+        <>
+            {props.error ? (
+                <div className="error">{props.error}</div>
+            ) : (
+                    props.comic.map(comic =>
+                        <div className='comic-container'>
+                            <h2>{comic.title}</h2>
+                            <img src={comic.img} alt={comic.alt} />
+                        </div>)
+                )}
         </>
     )
 }
